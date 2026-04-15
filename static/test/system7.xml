@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <Block BlockType="Inport" Name="in" SID="1">
+    <P Name="Position">[-20, 403, 10, 417]</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">in</P>
+    </Port>
+  </Block>
+  <Block BlockType="Sum" Name="S" SID="2">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[340, 507, 370, 538]</P>
+    <P Name="IconShape">rectangular</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="UD" SID="3">
+    <P Name="Position">[350, 573, 385, 607]</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Gain" Name="G" SID="4">
+    <P Name="Position">[305, 405, 335, 435]</P>
+    <P Name="Gain">0.81</P>
+  </Block>
+  <Block BlockType="Outport" Name="out" SID="5">
+    <P Name="Position">[565, 423, 595, 437]</P>
+  </Block>
+  <Line>
+    <P Name="Src">1#out:1</P>
+    <P Name="Dst">2#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Src">2#out:1</P>
+    <Branch>
+      <P Name="Dst">3#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="Dst">2#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Src">3#out:1</P>
+    <P Name="Dst">4#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Src">4#out:1</P>
+    <P Name="Dst">5#in:1</P>
+  </Line>
+</System>

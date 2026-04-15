@@ -1,0 +1,41 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Normal build",
+            "description": "\u0421\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u0430\u044f \u0441\u0431\u043e\u0440\u043a\u0430",
+            "generator": "Unix Makefiles",
+            "hidden": false,
+            "binaryDir": "${workspaceFolder}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "tests",
+            "displayName": "Build with GTest",
+            "description": "\u0421\u0431\u043e\u0440\u043a\u0430 \u0442\u0435\u0441\u0442\u043e\u0432 GTest",
+            "generator": "Unix Makefiles",
+            "hidden": false,
+            "binaryDir": "${workspaceFolder}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TESTS": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default",
+            "jobs": 16
+        },
+        {
+            "name": "tests",
+            "configurePreset": "tests",
+            "jobs": 16
+        }
+    ]
+}

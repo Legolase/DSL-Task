@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <Block BlockType="Gain" Name="I_gain" SID="1">
+    <P Name="Position">[210, 500, 240, 530]</P>
+    <P Name="Gain">2</P>
+  </Block>
+  <Block BlockType="Gain" Name="P_gain" SID="2">
+    <P Name="Position">[305, 405, 335, 435]</P>
+    <P Name="Gain">3</P>
+  </Block>
+  <Line>
+    <P Name="Src">1#out:1</P>
+    <P Name="Dst">2#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Src">2#out:1</P>
+    <P Name="Dst">1#in:2</P>
+  </Line>
+</System>

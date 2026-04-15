@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <Block BlockType="Inport" Name="in1" SID="1">
+    <P Name="Position">[-20, 403, 10, 417]</P>
+    <Port>
+      <P Name="PortNumber">1</P>
+      <P Name="Name">setpoint</P>
+    </Port>
+  </Block>
+  <Block BlockType="Sum" Name="S1" SID="2">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[105, 402, 135, 433]</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Line>
+    <P Name="Src">1#out:1</P>
+    <P Name="Dst">2#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Src">2#out:1</P>
+    <P Name="Dst">2#in:2</P>
+  </Line>
+</System>
