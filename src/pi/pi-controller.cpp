@@ -13,7 +13,10 @@ node::PINode* PIController::Mapper::operator()(const int sid) const
   auto it = controller_.sid2Node.find(sid);
 
   if (it == controller_.sid2Node.end()) {
-    THROW(PIControllerGetterException, "Exception occured taking node by sids. Check how you create a PI controller.");
+    THROW(
+        PIControllerGetterException,
+        "Exception occured taking node by sids. Check how you create a PI controller."
+    );
   }
 
   return it->second.get();
